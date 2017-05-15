@@ -54,6 +54,10 @@
 #include <rtems.h>
 #include <bsp.h>
 
+/* for SPR register aliases */
+#include <rtems/powerpc/registers.h>
+#include <libcpu/spr.h>
+
 /* Macro to detect RTEMS version */
 #include <rtems/system.h>
 

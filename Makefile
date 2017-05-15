@@ -33,7 +33,7 @@ OBJS=$(C_O_FILES) $(CC_O_FILES) $(S_O_FILES)
 include $(RTEMS_MAKEFILE_PATH)/Makefile.inc
 
 include $(RTEMS_CUSTOM)
-include $(RTEMS_ROOT)/make/lib.cfg
+include $(RTEMS_SHARE_PATH)/make/lib.cfg
 
 ifneq ($(filter $(RTEMS_CPU),i386 powerpc)xx,xx)
 # this CPU is supported
@@ -42,10 +42,11 @@ ifneq ($(filter $(RTEMS_CPU),i386 powerpc)xx,xx)
 # Add local stuff here using +=
 #
 
-DEFINES  +=
+DEFINES  += -Dmpc7455
 CPPFLAGS +=
 # inline declarations require -O
 CFLAGS   += -Winline
+CFLAGS   += -I/home/rtems/RTEMS/rtems-4.12/powerpc-rtems4.12/beatnik/lib/include
 
 #
 # Add your list of files to delete here.  The config files
